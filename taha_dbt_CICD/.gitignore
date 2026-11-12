@@ -1,0 +1,18 @@
+# dbt generated files
+target/
+dbt_packages/
+logs/
+
+# Python environment
+.venv/
+__pycache__/
+*.pyc
+
+# Credentials and local settings
+.env
+.env.*
+profiles.yml
+.user.yml
+
+# macOS
+.DS_Store
