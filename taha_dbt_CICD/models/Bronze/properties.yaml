@@ -1,8 +1,42 @@
 
-version : 2
+## There are few generic test like non unique, not null, accepted_values, relationships, etc. 
+## But if you want to create your own generic test then you can create a new test in the tests/generic folder and then call it in the properties.yaml file.
+## If u want to write a single test(Use to test logic) for a specific column then you can write it in the tests folder and call it in the properties.yaml file.
+version: 2
 
 models:
   - name: bronze_sales
     config:
-        materialized: view
-    
+      materialized: view
+    columns:
+      - name: sales_id
+        data_tests:
+          - unique
+          - not_null
+      - name: gross_amount
+        data_tests:
+          - customize_generic_test
+
+  - name: bronze_dim_store
+    columns:
+      - name: store_sk
+        data_tests:
+          - unique
+          - not_null
+      - name: store_name
+        data_tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - "MegaMart Manhattan"
+                  - "MegaMart Brooklyn"
+                  - "MegaMart Austin"
+                  - "MegaMart San Jose"
+                  - "MegaMart Toronto"
+      - name: country
+        data_tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - "USA"
+                  - "Canada"

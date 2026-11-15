@@ -1,0 +1,6 @@
+customer_id,customer_name,email,age,city,country
+101,John Smith,john.smith@gmail.com,28,Toronto,Canada
+102,Emma Wilson,emma.wilson@gmail.com,32,Vancouver,Canada
+103,Michael Brown,michael.brown@gmail.com,25,Montreal,Canada
+104,Sarah Johnson,sarah.johnson@gmail.com,30,Calgary,Canada
+105,David Lee,david.lee@gmail.com,35,Ottawa,Canada

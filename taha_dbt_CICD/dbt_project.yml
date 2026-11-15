@@ -34,3 +34,15 @@ models:
     # Config indicated by + and applies to all files under models/example/
     Bronze:
       +materialized: table
+      schema : bronze 
+    Silver:
+      +materialized: table
+      schema : silver
+    Gold: 
+      +materialized: table
+      schema : gold
+
+
+seeds:
+  taha_dbt_CICD:
+    +schema: bronze
