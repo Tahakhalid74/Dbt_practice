@@ -3,7 +3,7 @@ snapshots:
     relation: source('source', 'customers_scd')
     config:
       schema: source
-      database: dbt_cicd_learning
+      database: '{{target.catalog}}'
       unique_key: customer_id
       strategy: timestamp
       updated_at: updated_at

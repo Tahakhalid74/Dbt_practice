@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: source
-    database: dbt_cicd_learning
+    database: '{{target.catalog}}'
     tables:
       - name: fact_sales
       - name: fact_returns

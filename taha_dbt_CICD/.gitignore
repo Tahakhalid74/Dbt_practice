@@ -16,3 +16,6 @@ profiles.yml
 
 # macOS
 .DS_Store
+
+profiles.yml
+.env
