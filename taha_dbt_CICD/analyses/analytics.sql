@@ -1,3 +1,5 @@
-{# The section is used just for analysis and testing purposes. It is not part of the dbt model. #}
 
-select * from {{ ref('lookup') }}
+
+SELECT customer_id, city, dbt_valid_from, dbt_valid_to
+FROM {{ ref('customers_scd_snapshot') }}
+ORDER BY dbt_valid_from

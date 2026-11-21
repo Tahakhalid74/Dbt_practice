@@ -1,0 +1,12 @@
+snapshots:
+  - name: customers_scd_snapshot
+    relation: source('source', 'customers_scd')
+    config:
+      schema: source
+      database: dbt_cicd_learning
+      unique_key: customer_id
+      strategy: timestamp
+      updated_at: updated_at
+      dbt_valid_to_current: "to_date('9999-12-31')"
+
+

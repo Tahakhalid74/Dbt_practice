@@ -1,4 +1,4 @@
-{# {# {%set var_name = 'Taha Khalid'%}
+{%set var_name = 'Taha Khalid'%}
 
 {{var_name}}
 
@@ -13,11 +13,10 @@
     {% endif %}
 {% endfor %}
 
- #}
 
 {% set cols_list = ['sales_id', 'date_sk', 'gross_amount'] %}
 
-{% set initial_load = 1 %}
+{% set inc_load = 1 %}
 {% set last_load = 3 %}
 
 SELECT
@@ -26,9 +25,6 @@ SELECT
     {% endfor %}
 FROM {{ ref('bronze_sales') }}
 
-{% if initial_load == 1 %}
+{% if inc_load == 1 %}
 WHERE date_sk > {{ last_load }}
 {% endif %}
-
- #}
-

@@ -24,3 +24,4 @@ group by
     gender
 order by 
     total_net_amount desc
+
